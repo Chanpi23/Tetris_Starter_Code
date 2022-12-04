@@ -38,10 +38,11 @@ spawn() {
  move(p) {
     this.x= p.x;
 this.y= p.y;
+this.shape= p.shape
 
 }
 randomizeTetrominoType(noOfTypes) {
-    return Math.floor(Math.random() * noOfTypes);
+    return Math.floor(Math.random() * noOfTypes +1 );
   }
 
   setStartingPosition (){
