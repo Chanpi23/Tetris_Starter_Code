@@ -8,22 +8,18 @@ class Piece {
     typeId;
 
 
-
-
-
     constructor(ctx) {
         this.ctx = ctx;
-          this.spawn();
+        this.spawn();
     }
 
-spawn() {
-    this.typeId = this.randomizeTetrominoType (COLORS.length -1)
-    this.shape = SHAPES[this.typeId];
-    this.color = COLORS[this.typeId];
-    this.x=0
-    this.y= 0
-}
-
+    spawn() {
+        this.typeId = this.randomizeTetrominoType(COLORS.length -1)
+        this.shape = SHAPES[typeId];
+        this.color = COLORS[typeId];
+        this.x = 0
+        this.y = 0
+    }
 
     draw() {
         this.ctx.fillStyle = this.color;
@@ -35,19 +31,18 @@ spawn() {
             })
         })
     }
- move(p) {
-    this.x= p.x;
-this.y= p.y;
-this.shape= p.shape
 
-}
-randomizeTetrominoType(noOfTypes) {
-    return Math.floor(Math.random() * noOfTypes +1 );
-  }
+    move(p) {
+        this.x = p.x;
+        this.y = p.y;
+        this.shape = p.shape
+    }
 
-  setStartingPosition (){
-    this.x = this.typeId === 4 ? 4 :3
-  }
+    randomizeTetrominoType(noOfTypes) {
+        return Math.floor(Math.random() * noOfTypes + 1)
+    }
 
-
+    setStartingPosition(){
+        this.x = this.typeId === 4 ? 4 :3
+    }
 }
