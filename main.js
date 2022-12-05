@@ -1,7 +1,7 @@
 const canvas = document.getElementById('board')
 const ctx = canvas.getContext('2d')
 const canvasNext = document.getElementById('next')
-const ctxNext = canvas.getContext('2d')
+const ctxNext = canvasNext.getContext('2d')
 
 let accountValues = {
     score: 0,
@@ -10,7 +10,7 @@ let accountValues = {
 }
 
 function updateAccount(key,value) {
-    let element = getElementById(key)
+    let element = document.getElementById(key)
     if (element) {
         element.textContent = value
     }
@@ -79,7 +79,7 @@ function resetGame() {
     account.lines = 0
     account.level =0
     board.reset()
-    time = {start: 0, elapsed: 0, level: LEVEL[accounts.level]}
+    time = {start: 0, elapsed: 0, level: LEVEL[account.level]}
 }
 
 function play() {
@@ -92,7 +92,7 @@ function play() {
     animate()
 }
 
-function animate() {
+function animate(now = 0) {
     time.elapsed = now - time.start
     if (time.elapsed > time.level) {
         time.start = now
